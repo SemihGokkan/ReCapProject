@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-    public class InMemoryCarDal : ICarDal
+    public class InMemoryCarDal : IEntityRepository<Car>
     {
 
         List<Car> _cars;
@@ -42,6 +42,16 @@ namespace DataAccess.Concrete
         public List<Car> GetCarsByBrand(int BrandId)
         {
             return _cars.Where(c => c.BrandId == BrandId).ToList();
+        }
+
+        public List<Car> GetCarsByBrandId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Car> GetCarsByColorId(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
